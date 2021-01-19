@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -6,6 +8,9 @@ class ThemeProvider extends ChangeNotifier {
   
   ThemeMode themeMode = ThemeMode.system;
   
+
+
+  // todo make me pretty
   toggleThemeMode() {
     if (themeMode == ThemeMode.dark) {
       themeMode = ThemeMode.light;
@@ -29,13 +34,35 @@ class ThemeProvider extends ChangeNotifier {
 
   ThemeData theme = ThemeData(
     primaryColor: Colors.purple,
-    primaryTextTheme: GoogleFonts.montserratTextTheme(),
+    primaryTextTheme: GoogleFonts.montserratTextTheme(
+      TextTheme(
+        // In use
+        bodyText1: TextStyle(color: darkColor),
+        headline3: TextStyle(color: lightColor),
+        
+        headline2: TextStyle(color: darkColor),
+        headline4: TextStyle(color: darkColor),
+        headline5: TextStyle(color: darkColor),
+        )),
     accentColor: accentColor,
     appBarTheme: AppBarTheme(
-      color: accentColor,
+      color: darkColor,
       backgroundColor: darkColor,
       centerTitle: true,
       actionsIconTheme: IconThemeData(color: accentColor),
     ),
+  );
+  ThemeData themeDark = ThemeData(
+    primaryColor: Colors.purple,
+    primaryTextTheme: GoogleFonts.montserratTextTheme(),
+    accentColor: accentColor,
+    iconTheme: IconThemeData(color: accentColor),
+    appBarTheme: AppBarTheme(
+      iconTheme: IconThemeData(color: accentColor),
+      backgroundColor: lightColor,
+      centerTitle: true,
+      actionsIconTheme: IconThemeData(color: accentColor),
+    ),
+    
   );
 }

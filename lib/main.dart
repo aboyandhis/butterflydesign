@@ -26,15 +26,10 @@ class MyApp extends StatelessWidget {
     return Consumer2<AppData, ThemeProvider>(
       builder: (BuildContext context,AppData app,ThemeProvider theme, _) => MaterialApp(
           darkTheme: theme.theme,
-          themeMode: theme.themeMode,
+          themeMode: theme.themeMode, theme: theme.theme,
           debugShowCheckedModeBanner: false,
           title: 'Butterfly Design',
-          routes: {Home.routeName: (BuildContext context) => Home()},
-          theme: ThemeData(
-            primarySwatch: Colors.deepPurple,
-            primaryColor: Colors.purple[300],
-            accentColor: Colors.yellow[400],
-          )),
+          routes: {Home.routeName: (BuildContext context) => Home()})
     );
   }
 }
