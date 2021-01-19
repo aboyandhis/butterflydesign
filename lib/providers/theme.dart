@@ -40,6 +40,8 @@ class ThemeProvider extends ChangeNotifier {
         bodyText1: TextStyle(color: darkColor),
         headline3: TextStyle(color: lightColor),
         
+
+        //todo clean me
         headline2: TextStyle(color: darkColor),
         headline4: TextStyle(color: darkColor),
         headline5: TextStyle(color: darkColor),
@@ -54,7 +56,19 @@ class ThemeProvider extends ChangeNotifier {
   );
   ThemeData themeDark = ThemeData(
     primaryColor: Colors.purple,
-    primaryTextTheme: GoogleFonts.montserratTextTheme(),
+    primaryTextTheme: GoogleFonts.montserratTextTheme(
+      TextTheme(
+                // In use
+        bodyText1: TextStyle(color: lightColor),
+        headline3: TextStyle(color: darkColor),
+        
+
+        //todo clean me
+        headline2: TextStyle(color: lightColor),
+        headline4: TextStyle(color: lightColor),
+        headline5: TextStyle(color: lightColor),
+      )
+    ),
     accentColor: accentColor,
     iconTheme: IconThemeData(color: accentColor),
     appBarTheme: AppBarTheme(
