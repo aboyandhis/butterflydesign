@@ -5,10 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 class ThemeProvider extends ChangeNotifier {
   bool _isDark = false;
-  
-  ThemeMode themeMode = ThemeMode.system;
-  
 
+  ThemeMode themeMode = ThemeMode.system;
 
   // todo make me pretty
   toggleThemeMode() {
@@ -26,6 +24,7 @@ class ThemeProvider extends ChangeNotifier {
     _isDark = !_isDark;
     notifyListeners();
   }
+
   // Serves as a temp dark color for dark text / bg
   static final Color darkColor = Colors.black87;
   static final Color lightColor = Colors.grey[50];
@@ -34,18 +33,16 @@ class ThemeProvider extends ChangeNotifier {
 
   ThemeData theme = ThemeData(
     primaryColor: Colors.purple,
-    primaryTextTheme: GoogleFonts.montserratTextTheme(
-      TextTheme(
-        // In use
-        bodyText1: TextStyle(color: darkColor),
-        headline3: TextStyle(color: lightColor),
-        
+    primaryTextTheme: GoogleFonts.montserratTextTheme(TextTheme(
+      // In use
+      bodyText1: TextStyle(color: darkColor),
+      headline3: TextStyle(color: lightColor),
 
-        //todo clean me
-        headline2: TextStyle(color: darkColor),
-        headline4: TextStyle(color: darkColor),
-        headline5: TextStyle(color: darkColor),
-        )),
+      //todo clean me
+      headline2: TextStyle(color: darkColor),
+      headline4: TextStyle(color: darkColor),
+      headline5: TextStyle(color: darkColor),
+    )),
     accentColor: accentColor,
     appBarTheme: AppBarTheme(
       color: darkColor,
@@ -56,19 +53,16 @@ class ThemeProvider extends ChangeNotifier {
   );
   ThemeData themeDark = ThemeData(
     primaryColor: Colors.purple,
-    primaryTextTheme: GoogleFonts.montserratTextTheme(
-      TextTheme(
-                // In use
-        bodyText1: TextStyle(color: lightColor),
-        headline3: TextStyle(color: darkColor),
-        
+    primaryTextTheme: GoogleFonts.montserratTextTheme(TextTheme(
+      // In use
+      bodyText1: TextStyle(color: lightColor),
+      headline3: TextStyle(color: darkColor),
 
-        //todo clean me
-        headline2: TextStyle(color: lightColor),
-        headline4: TextStyle(color: lightColor),
-        headline5: TextStyle(color: lightColor),
-      )
-    ),
+      //todo clean me
+      headline2: TextStyle(color: lightColor),
+      headline4: TextStyle(color: lightColor),
+      headline5: TextStyle(color: lightColor),
+    )),
     accentColor: accentColor,
     iconTheme: IconThemeData(color: accentColor),
     appBarTheme: AppBarTheme(
@@ -77,6 +71,5 @@ class ThemeProvider extends ChangeNotifier {
       centerTitle: true,
       actionsIconTheme: IconThemeData(color: accentColor),
     ),
-    
   );
 }
