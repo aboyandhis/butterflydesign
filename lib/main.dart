@@ -12,13 +12,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Butterfly Design',
+      routes: {
+         Home.routeName: (BuildContext context) => Home()
+      },
       theme: ThemeData(
- 
         primarySwatch: Colors.deepPurple,
         primaryColor: Colors.purple[300],
         accentColor: Colors.yellow[400],
-      ),//Todo
-      home: Home()
-    );
+      ));
   }
 }
